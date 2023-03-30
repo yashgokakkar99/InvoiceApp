@@ -5,6 +5,7 @@ import Dates from "./components/Dates";
 import Table from "./components/Table";
 import Notes from "./components/Notes";
 import Footer from "./components/Footer";
+import TableForm from "./components/TableForm";
 
 import { useState } from "react";
 
@@ -23,6 +24,12 @@ function App() {
   const [invoiceDate, setInvoiceDate] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [notes, setNotes] = useState("");
+
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
+  const [list, setList] = useState([]);
 
   const handlePrint = () => {
     window.print();
@@ -47,7 +54,7 @@ function App() {
               dueDate={dueDate}
             />
 
-            <Table />
+            <Table description={description} qunatity={quantity} price={price} amount={amount}/>
 
             <Notes notes={notes} />
 
@@ -234,6 +241,11 @@ function App() {
                     onChange={(e) => setDueDate(e.target.value)}
                   ></input>
                 </div>
+              </article>
+
+              {/*This is our table form */}
+              <article>
+                <TableForm description={description} setDescription={setDescription} quantity={quantity} setQuantity={setQuantity} price={price} setPrice={setPrice} amount={amount} setAmount={setAmount} list={list} setList={setList}/>
               </article>
 
               <label for="notes">Enter your notes </label>
