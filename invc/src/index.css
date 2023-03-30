@@ -11,3 +11,19 @@ body {
 .footer li{
   margin: 0.5rem 0.2rem;
 }
+
+label{
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #112827;
+}
+
+input, textarea{
+  background-color: #f1f1f1;
+  padding:0.5rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.8rem;
+  color: #383838;
+  font-weight: 600;  
+}

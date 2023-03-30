@@ -36,15 +36,29 @@ function App() {
 
             <MainDetails name={name} address={address} />
 
-            <ClientDetails clientName={clientName} clientAddress={clientAddress}/>
+            <ClientDetails
+              clientName={clientName}
+              clientAddress={clientAddress}
+            />
 
-            <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} dueDate={dueDate}/>
+            <Dates
+              invoiceNumber={invoiceNumber}
+              invoiceDate={invoiceDate}
+              dueDate={dueDate}
+            />
 
             <Table />
 
-            <Notes notes={notes}/>
+            <Notes notes={notes} />
 
-            <Footer name={name} email={email} bankName={bankName} bankAccount={bankAccount} phone={phone} website={website}/>
+            <Footer
+              name={name}
+              email={email}
+              bankName={bankName}
+              bankAccount={bankAccount}
+              phone={phone}
+              website={website}
+            />
             <button
               onClick={() => setShowInvoice(false)}
               className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
@@ -56,27 +70,33 @@ function App() {
           <>
             {/*name, address, client name, client address,email, phone number, bank name, banck account number, account holder, website invoice number, invoice date, due date, table, notes */}
             <div className="flex flex-col justify-center">
-              <label for="name">Enter your name </label>
-              <input
-                type="text"
-                name="text"
-                id="name"
-                placeholder="Enter your name"
-                autoComplete="off"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              ></input>
+              <article className="md:grid grid-cols-2 gap-10">
+                <div className="flex flex-col">
+                  <label for="name">Enter your name </label>
+                  <input
+                    type="text"
+                    name="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    autoComplete="off"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  ></input>
+                </div>
 
-              <label for="address">Enter your address </label>
-              <input
-                type="text"
-                name="address"
-                id="address"
-                placeholder="Enter your address"
-                autoComplete="off"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              ></input>
+                <div className="flex flex-col">
+                  <label for="address">Enter your address </label>
+                  <input
+                    type="text"
+                    name="address"
+                    id="address"
+                    placeholder="Enter your address"
+                    autoComplete="off"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                  ></input>
+                </div>
+              </article>
 
               <label for="email">Enter your email </label>
               <input
