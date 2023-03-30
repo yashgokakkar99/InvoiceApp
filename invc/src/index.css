@@ -8,7 +8,6 @@ body {
   background-color: #f1f1f1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.footer li{
+  margin: 0.5rem 0.2rem;
 }
